@@ -1,0 +1,8 @@
+<div class="container">
+  <button (click)="orderByDate()">Ordina per Data</button>
+  <button (click)="orderByName()">Ordina per Nome</button>
+  <button (click)="refreshArray()">Refresh</button>
+  <app-todo-list-element *ngFor="let todo of todosArray" [todo]="todo" (onTodoDeleted)="manageTodoDelete($event)">
+  </app-todo-list-element>
+</div>
+
