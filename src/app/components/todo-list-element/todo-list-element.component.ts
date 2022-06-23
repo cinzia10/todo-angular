@@ -18,6 +18,7 @@ export class TodoListElementComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /// FUNZIONE CHE
   todoCompleted(): void{
     this.todo?.done();
     this.onTodoCompleted.emit(this.todo);

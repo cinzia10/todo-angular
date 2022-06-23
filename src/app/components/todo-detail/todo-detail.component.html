@@ -1,1 +1,17 @@
-<p>todo-detail works!</p>
+<div *ngIf="todo">
+  <span>Nome: </span>
+  <input type="text" [(ngModel)]="todo.name">
+  <br>
+  <span>Priorità: </span>
+  <input type="number" [(ngModel)]="todo.priority">
+  <br>
+  <span>Tag: </span>
+  <input type="text" [(ngModel)]="tagsString">
+  <br>
+  <span>Date: </span>
+  <span>{{todo.creationDate}}</span>
+  <br>
+  <span *ngIf="todo.doneDate">Done Date: {{todo.doneDate}}</span>
+  <br>
+  <button [disabled]="!todo.name" (click)="saveTodo()">Save</button>
+</div>

@@ -21,22 +21,21 @@ export class DoneListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  refreshArray(){
-  }
-
+  /// FUNZIONE CHE ELEMINA IL TODO DALL'ARRAY
   manageTodoDelete(todo: TodoClass) {
-    this.dataServ.removeTodo(todo);
+    this.dataServ.removeTodo(todo).subscribe({
+      next: res => console.log(res),
+      error: err => console.log(err)
+    });
   }
 
+  /// FUNZIONE CHE ORDINA I TODO PER NOME
   orderByName() {
     this.todosArray.sort(TodoClass.compareByName);
   }
 
+  /// FUNZIONE CHE ORDINA I TODO PER DATA
   orderByDate() {
     this.todosArray.sort(TodoClass.compareByDate);
-  }
-
-  orderByPriority() {
-    this.todosArray.sort(TodoClass.compareByPriority)
   }
 }
